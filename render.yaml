@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: gd-sync
+    runtime: node
+    plan: free
+    buildCommand: "echo skip-build"
+    startCommand: "node server.js"
+    healthCheckPath: /health
+    envVars:
+      - key: FEISHU_APP_ID
+        sync: false
+      - key: FEISHU_APP_SECRET
+        sync: false
+      - key: FEISHU_BASE_TOKEN
+        sync: false
+      - key: ALLOWED_ORIGIN
+        value: "https://d1ad78c935d84f1c899537bf49ae35be.sh1.agentos-app.net"
+      - key: SYNC_TABLE_NAME
+        value: "同步存储"
+      - key: SYNC_KEY
+        sync: false
+      - key: PORT
+        sync: false
